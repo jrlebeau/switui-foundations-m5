@@ -16,36 +16,42 @@ struct HomeViewRow: View {
     var time: String
     
     var body: some View {
+        
         ZStack {
             
             Rectangle()
-//                            .aspectRatio(CGSize(width:335, height: 175), contentMode: .fit)
-                .frame(width: 335.0, height: 175.0)
                 .foregroundColor(.white)
                 .cornerRadius(10)
                 .shadow(radius: 5)
+                .aspectRatio(CGSize(width: 335, height: 175), contentMode: .fit)
                 
             
             HStack {
                 
+                // Image
                 Image(image)
                     .resizable()
-                    .frame(width:116, height:116)
+                    .frame(width: 116, height: 116)
                     .clipShape(Circle())
                 
                 Spacer()
                 
-                VStack(alignment: .leading, spacing: 10) {
+                // Text
+                VStack (alignment: .leading, spacing: 10) {
                     
+                    // Headline
                     Text(title)
                         .bold()
                     
+                    // Description
                     Text(description)
                         .padding(.bottom, 20)
                         .font(.caption)
                     
+                    // Icons
                     HStack {
                         
+                        // Number of lessons/questions
                         Image(systemName: "text.book.closed")
                             .resizable()
                             .frame(width: 15, height: 15)
@@ -54,6 +60,7 @@ struct HomeViewRow: View {
                         
                         Spacer()
                         
+                        // Time
                         Image(systemName: "clock")
                             .resizable()
                             .frame(width: 15, height: 15)
@@ -61,14 +68,14 @@ struct HomeViewRow: View {
                             .font(Font.system(size: 10))
                         
                     }
-                    
                 }
                 .padding(.leading, 20)
-                
             }
             .padding(.horizontal, 20)
+            
         }
-
+        
+        
     }
 }
 
