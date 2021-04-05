@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51042263261BABAC00599327 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51042262261BABAC00599327 /* CodeTextView.swift */; };
 		513AA6A6260D2D81009AAA37 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 513AA6A5260D2D81009AAA37 /* data.json */; };
 		513AA6A9260D2D92009AAA37 /* style.html in Resources */ = {isa = PBXBuildFile; fileRef = 513AA6A8260D2D92009AAA37 /* style.html */; };
 		513AA6AC260D2F68009AAA37 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513AA6AB260D2F68009AAA37 /* Models.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		51042262261BABAC00599327 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		513AA6A5260D2D81009AAA37 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		513AA6A8260D2D92009AAA37 /* style.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = style.html; sourceTree = "<group>"; };
 		513AA6AB260D2F68009AAA37 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 		51964FC9260A8DFA006D01A2 /* LearningApp */ = {
 			isa = PBXGroup;
 			children = (
+				513AA6A5260D2D81009AAA37 /* data.json */,
 				51964FE0260A8EDE006D01A2 /* Resources */,
 				51964FDF260A8ECF006D01A2 /* Helpers */,
 				51964FDE260A8EC0006D01A2 /* Models */,
@@ -98,6 +101,7 @@
 		51964FDC260A8EA0006D01A2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				51042262261BABAC00599327 /* CodeTextView.swift */,
 				51964FCC260A8DFA006D01A2 /* HomeView.swift */,
 				513AA6AE261276F2009AAA37 /* HomeViewRow.swift */,
 				516E7A4B2613BE6D005C3A73 /* ContentView.swift */,
@@ -134,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				513AA6A8260D2D92009AAA37 /* style.html */,
-				513AA6A5260D2D81009AAA37 /* data.json */,
 				51D6AE7626167830002053C2 /* Constants.swift */,
 			);
 			path = Resources;
@@ -225,6 +228,7 @@
 				51D6AE7126167202002053C2 /* ContentDetailView.swift in Sources */,
 				51964FCB260A8DFA006D01A2 /* LearningApp.swift in Sources */,
 				516E7A4F2613CB00005C3A73 /* ContentViewRow.swift in Sources */,
+				51042263261BABAC00599327 /* CodeTextView.swift in Sources */,
 				51964FE2260A8F2D006D01A2 /* ContentModel.swift in Sources */,
 				513AA6AC260D2F68009AAA37 /* Models.swift in Sources */,
 				51D6AE7726167830002053C2 /* Constants.swift in Sources */,
