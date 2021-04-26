@@ -20,6 +20,9 @@ class ContentModel: ObservableObject {
     
     var styleData: Data?
     
+    @Published var currentContentSelected:Int?
+    
+    
     init() {
         getLocalData()
     }
