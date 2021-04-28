@@ -95,7 +95,7 @@ struct TestView: View {
                         
                         RectangleCard(color: .green)
                             .frame(height: 48)
-                        Text(buttonText(submitted))
+                        Text(model.buttonText(submitted))
                             .bold()
                             .foregroundColor(.white)
                     }
@@ -111,23 +111,6 @@ struct TestView: View {
     
 
 }
-
-struct testViewFunctions {
-    @EnvironmentObject var model:ContentModel
-
-    func buttonText(_ submitted:Bool) -> String {
-        if submitted == true {
-            if model.currentQuestionIndex + 1 == model.currentModule!.test.questions.count {
-                return "Finish"
-            } else {
-                return "Next"
-            }
-        } else {
-            return "Submit"
-        }
-    }
-}
-
 
 struct TestView_Previews: PreviewProvider {
     static var previews: some View {

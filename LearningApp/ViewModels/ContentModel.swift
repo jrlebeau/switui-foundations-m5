@@ -157,4 +157,16 @@ class ContentModel: ObservableObject {
         
     }
     
+        func buttonText(_ submitted:Bool) -> String {
+            if submitted == true {
+                if currentQuestionIndex + 1 == currentQuestion?.content.count {
+                    return "Finish"
+                } else {
+                    return "Next"
+                }
+            } else {
+                return "Submit"
+            }
+        }
+    
 }
