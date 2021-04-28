@@ -63,7 +63,6 @@ struct TestView: View {
                                         }
                                     }
                                     
-                                    
                                     Text(model.currentQuestion!.answers[index])
                                 }
 
@@ -76,10 +75,18 @@ struct TestView: View {
                 }
                 Button{
                     
-                    submitted = true
-                    
-                    if selectedAnswerIndex == model.currentQuestion!.correctIndex {
-                        numCorrect += 1
+                    if submitted == true {
+                        model.nextQuestion()
+                        submitted = false
+                        selectedAnswerIndex = nil
+                        
+                    } else {
+                        
+                        submitted = true
+                        
+                        if selectedAnswerIndex == model.currentQuestion!.correctIndex {
+                            numCorrect += 1
+                        }
                     }
                     
                 } label: {
@@ -88,7 +95,7 @@ struct TestView: View {
                         
                         RectangleCard(color: .green)
                             .frame(height: 48)
-                        Text("Submit")
+                        Text(buttonText(submitted))
                             .bold()
                             .foregroundColor(.white)
                     }
@@ -101,7 +108,26 @@ struct TestView: View {
             .navigationBarTitle("\(model.currentModule?.category ?? "")  Test")
         }
     }
+    
+
 }
+
+struct testViewFunctions {
+    @EnvironmentObject var model:ContentModel
+
+    func buttonText(_ submitted:Bool) -> String {
+        if submitted == true {
+            if model.currentQuestionIndex + 1 == model.currentModule!.test.questions.count {
+                return "Finish"
+            } else {
+                return "Next"
+            }
+        } else {
+            return "Submit"
+        }
+    }
+}
+
 
 struct TestView_Previews: PreviewProvider {
     static var previews: some View {
