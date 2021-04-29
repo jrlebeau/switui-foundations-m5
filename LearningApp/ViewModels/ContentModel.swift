@@ -27,7 +27,10 @@ class ContentModel: ObservableObject {
     
     
     init() {
+        
         getLocalData()
+        
+        getRemoteData()
     }
     
     
@@ -59,6 +62,42 @@ class ContentModel: ObservableObject {
         catch {
             print("Could not parse style data")
         }
+    }
+    
+    func getRemoteData() {
+        
+        let urlString = "https://jrlebeau.github.io/learningapp-data/data2.json"
+        
+        let url = URL(string: urlString)
+        guard url != nil else {
+            return
+        }
+        
+        let request = URLRequest(url: url!)
+        
+        let session = URLSession.shared
+        
+        
+        
+        let dataTask = session.dataTask(with: request) { (data, response, error) in
+            
+            guard error == nil else {
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let modules = try decoder.decode([Module].self, from: data!)
+                self.modules += modules
+
+            }
+            catch {
+                
+            }
+            
+        }
+        
+        dataTask.resume()
     }
     
     //MARK: Module navigation methods
